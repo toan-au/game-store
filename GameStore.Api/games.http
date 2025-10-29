@@ -1,0 +1,38 @@
+GET http://localhost:5162/games
+
+###
+
+GET http://localhost:5162/games/1
+
+###
+
+POST http://localhost:5162/games
+Content-Type: application/json
+
+{
+    "title": "Resident Evil Remake",
+    "genre": "Horror",
+    "price": 59.99,
+    "developer": "Capcom",
+    "publisher": "Capcom",
+    "releaseDate": "1996-03-22"
+}
+
+###
+
+PUT http://localhost:5162/games/1
+Content-Type: application/json
+
+{
+  "id": 1,
+  "title": "The Witcher 3: Wild Hunt (50% Off)",
+  "genre": "RPG",
+  "price": 19.99,
+  "developer": "CD Projekt Red",
+  "publisher": "CD Projekt",
+  "releaseDate": "2015-05-19"
+}
+
+###
+
+DELETE http://localhost:5162/games/7
