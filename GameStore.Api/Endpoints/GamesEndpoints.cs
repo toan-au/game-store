@@ -1,4 +1,3 @@
-using System;
 using GameStore.Api.Dtos;
 
 namespace GameStore.Api.Endpoints;
@@ -18,7 +17,7 @@ public static class GamesEndpoints
 
     public static WebApplication MapGamesEndpoints(this WebApplication app)
     {
-        var group = app.MapGroup("games");
+        var group = app.MapGroup("games").WithParameterValidation();
 
         group.MapGet("/", () => games);
 
