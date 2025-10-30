@@ -3,6 +3,7 @@ using System;
 using GameStore.Api.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GameStore.Api.Migrations
 {
     [DbContext(typeof(GameStoreContext))]
-    partial class GameStoreContextModelSnapshot : ModelSnapshot
+    [Migration("20251030045540_SeedGenres")]
+    partial class SeedGenres
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "9.0.10");
@@ -23,24 +26,24 @@ namespace GameStore.Api.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("Developer")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
                     b.Property<int>("GenreId")
                         .HasColumnType("INTEGER");
 
-                    b.Property<decimal>("Price")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Publisher")
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateOnly?>("ReleaseDate")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Title")
+                    b.Property<string>("developer")
                         .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("name")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<decimal>("price")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("publisher")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateOnly?>("releaseDate")
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
@@ -52,68 +55,68 @@ namespace GameStore.Api.Migrations
 
             modelBuilder.Entity("GameStore.Api.Entities.Genre", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("Name")
+                    b.Property<string>("name")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.HasKey("Id");
+                    b.HasKey("id");
 
                     b.ToTable("Genres");
 
                     b.HasData(
                         new
                         {
-                            Id = 1,
-                            Name = "Action"
+                            id = 1,
+                            name = "Action"
                         },
                         new
                         {
-                            Id = 2,
-                            Name = "Fighting"
+                            id = 2,
+                            name = "Fighting"
                         },
                         new
                         {
-                            Id = 3,
-                            Name = "Roleplaying"
+                            id = 3,
+                            name = "Roleplaying"
                         },
                         new
                         {
-                            Id = 4,
-                            Name = "Sports"
+                            id = 4,
+                            name = "Sports"
                         },
                         new
                         {
-                            Id = 5,
-                            Name = "Racing"
+                            id = 5,
+                            name = "Racing"
                         },
                         new
                         {
-                            Id = 6,
-                            Name = "First Person Shooter"
+                            id = 6,
+                            name = "First Person Shooter"
                         },
                         new
                         {
-                            Id = 7,
-                            Name = "Adventure"
+                            id = 7,
+                            name = "Adventure"
                         },
                         new
                         {
-                            Id = 8,
-                            Name = "Gacha"
+                            id = 8,
+                            name = "Gacha"
                         },
                         new
                         {
-                            Id = 9,
-                            Name = "Third Person Shooter"
+                            id = 9,
+                            name = "Third Person Shooter"
                         },
                         new
                         {
-                            Id = 10,
-                            Name = "VR"
+                            id = 10,
+                            name = "VR"
                         });
                 });
 

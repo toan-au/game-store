@@ -6,24 +6,23 @@ public record class CreateGameDto
 (
     [Required]
     [StringLength(50)]
-    string title,
+    string Title,
 
     [Required]
-    [StringLength(20)]
-    string genre,
+    int GenreId,
 
     [Required]
     [Range(0, 200)]
-    decimal price,
+    decimal Price,
 
     [Required]
     [StringLength(50)]
-    string developer,
+    string Developer,
 
     [Required]
     [StringLength(50)]
-    string publisher,
+    string Publisher,
 
-    DateOnly? releaseDate
+    DateOnly? ReleaseDate
 );
 

@@ -11,16 +11,18 @@ public class GameStoreContext(DbContextOptions<GameStoreContext> options) : DbCo
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         Genre[] genres = [
-            new Genre() { id = 1, name = "Action" },
-            new Genre() { id = 2, name = "Action" },
-            new Genre() { id = 3, name = "Action" },
-            new Genre() { id = 4, name = "Action" },
-            new Genre() { id = 5, name = "Action" },
-            new Genre() { id = 6, name = "Action" }
+            new Genre() { Id = 1, Name = "Action" },
+            new Genre() { Id = 2, Name = "Fighting" },
+            new Genre() { Id = 3, Name = "Roleplaying" },
+            new Genre() { Id = 4, Name = "Sports" },
+            new Genre() { Id = 5, Name = "Racing" },
+            new Genre() { Id = 6, Name = "First Person Shooter" },
+            new Genre() { Id = 7, Name = "Adventure" },
+            new Genre() { Id = 8, Name = "Gacha" },
+            new Genre() { Id = 9, Name = "Third Person Shooter" },
+            new Genre() { Id = 10, Name = "VR" }
         ];
 
-        modelBuilder.Entity<Genre>().HasData(
-
-        );
+        modelBuilder.Entity<Genre>().HasData(genres);
     }
 }

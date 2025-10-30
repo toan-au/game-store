@@ -10,12 +10,12 @@ POST http://localhost:5162/games
 Content-Type: application/json
 
 {
-    "title": "Resident Evil Remake",
-    "genre": "Horror",
+    "title": "Final Fantasy VII Remake",
+    "genreId": 3,
     "price": 59.99,
-    "developer": "Capcom",
-    "publisher": "Capcom",
-    "releaseDate": "1996-03-22"
+    "developer": "Square Enix",
+    "publisher": "Square Enix",
+    "releaseDate": "2020-04-10"
 }
 
 ###
@@ -24,10 +24,10 @@ PUT http://localhost:5162/games/1
 Content-Type: application/json
 
 {
-  "id": 1,
-  "title": "The Witcher 3: Wild Hunt (50% Off)",
-  "genre": "RPG",
-  "price": 19.99,
+  "id": 5,
+  "title": "The Witcher 3: Wild Hunt (100% Off)",
+  "genreId": 2,
+  "price": 0,
   "developer": "CD Projekt Red",
   "publisher": "CD Projekt",
   "releaseDate": "2015-05-19"
@@ -35,4 +35,4 @@ Content-Type: application/json
 
 ###
 
-DELETE http://localhost:5162/games/7
+DELETE http://localhost:5162/games/3
