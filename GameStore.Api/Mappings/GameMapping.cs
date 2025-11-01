@@ -2,7 +2,7 @@ using System;
 using GameStore.Api.Dtos;
 using GameStore.Api.Entities;
 
-namespace GameStore.Api.Mapping;
+namespace GameStore.Api.Mappings;
 
 public static class GameMapping
 {

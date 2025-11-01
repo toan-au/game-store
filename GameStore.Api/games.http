@@ -24,8 +24,7 @@ PUT http://localhost:5162/games/1
 Content-Type: application/json
 
 {
-  "id": 5,
-  "title": "The Witcher 3: Wild Hunt (100% Off)",
+  "title": "The Witcher 3: Wild Hunt (10% Off)",
   "genreId": 2,
   "price": 0,
   "developer": "CD Projekt Red",

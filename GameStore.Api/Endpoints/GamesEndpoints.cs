@@ -1,12 +1,12 @@
 using GameStore.Api.Data;
 using GameStore.Api.Dtos;
 using GameStore.Api.Entities;
-using GameStore.Api.Mapping;
+using GameStore.Api.Mappings;
 using Microsoft.EntityFrameworkCore;
 
 namespace GameStore.Api.Endpoints;
 
-public static class GamesEndpoints
+public static class GamesEndpoint
 {
     private const string GetGameByIdEndPointName = "GetGameById";
     public static WebApplication MapGamesEndpoints(this WebApplication app)
@@ -52,7 +52,7 @@ public static class GamesEndpoints
             }
         });
 
-        group.MapPut("/{id}", async (int id, UpdateGameDto updatedGame, GameStoreContext context) =>
+        group.MapPut("/{id}", async (int id, UpdateGameDto payload, GameStoreContext context) =>
         {
 
             Game? game = context.Games.Find(id);
@@ -60,7 +60,10 @@ public static class GamesEndpoints
 
             try
             {
-                context.Entry(game).CurrentValues.SetValues(updatedGame.toEntity());
+                Game updatedGame = payload.toEntity();
+                updatedGame.Id = game.Id;
+
+                context.Entry(game).CurrentValues.SetValues(updatedGame);
                 await context.SaveChangesAsync();
 
                 return Results.NoContent();
